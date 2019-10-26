@@ -9,9 +9,9 @@ const path = require('path')
 app.use(express.json())
 app.use(cors())
 
-app.get('/',(req,res)=>{
-    res.send('welcome to the ticket master app')
-})
+// app.get('/',(req,res)=>{
+//     res.send('welcome to the ticket master app')
+// })
 
 app.use('/',router)
 
