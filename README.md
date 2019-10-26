@@ -3,4 +3,6 @@ Full Stack Ticket Management application which allows user to register or login 
 and their issues pertaining to a specific department and accordingly assign employees.
 
 CRUD Operations can be done for customers,employees,departments and Tickets
-Tickets showcase pie chart for pending tickets with respect to their priority and a bar graph for pending tickets with respect to their departments
+
+
+Tickets showcase a pie chart for pending tickets with respect to their priority and a bar graph for pending tickets with respect to their departments
