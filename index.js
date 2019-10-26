@@ -13,7 +13,7 @@ app.use(cors())
 //     res.send('welcome to the ticket master app')
 // })
 
-app.use('/',router)
+app.use('/api',router)
 
 app.use(express.static(path.join(__dirname,"client/build"))) 
 app.get("*",(req,res) => { 

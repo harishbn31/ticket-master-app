@@ -16,7 +16,7 @@ export const removeUser = () => {
 
 export const startSetUser = (loginData,redirect) => {
     return (dispatch) => {
-        axios.post('/users/login',loginData)
+        axios.post('/api/users/login',loginData)
             .then(response=>{
                 if(response.data.hasOwnProperty('errors')){
                     // alert(response.data.errors)

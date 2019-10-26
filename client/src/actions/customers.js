@@ -13,7 +13,7 @@ export const setCustomers = (customer) => {
 
 export const startSetCustomers = () => {
     return (dispatch) => {
-        axios.get('/customers',{
+        axios.get('/api/customers',{
                     headers: {
                         'x-auth': localStorage.getItem('authToken')
                     }
