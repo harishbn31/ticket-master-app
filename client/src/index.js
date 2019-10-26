@@ -29,11 +29,15 @@ if(localStorage.getItem('authToken')){
         .then(response=>{
                 const user = response.data
                 store.dispatch(setUser(user))
+        })
+
+
                 store.dispatch(startSetCustomers())
                 store.dispatch(startSetDepartments())
                 store.dispatch(startSetEmployees())
                 store.dispatch(startSetTickets())
-        })
+               
+              
 }
 
 
