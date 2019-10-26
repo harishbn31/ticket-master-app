@@ -58,7 +58,7 @@ class TicketForm extends React.Component{
 
     componentDidMount(){
 
-        axios.get('/employees',{
+        axios.get('/api/employees',{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

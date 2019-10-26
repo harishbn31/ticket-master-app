@@ -26,6 +26,7 @@ export const startSetUser = (loginData,redirect) => {
                     localStorage.setItem('authToken',response.data.token)
                     dispatch(setUser(response.data.user))
                     redirect()
+                    setTimeout(()=>document.location.reload(),1000)
                     
                 }
             })
@@ -34,7 +35,7 @@ export const startSetUser = (loginData,redirect) => {
 
 export const startAddUser = (registerData,redirect) => {
     return(dispatch=>{
-        axios.post('/users/registration',registerData)
+        axios.post('/api/users/registration',registerData)
             .then(response=>{
                 if(response.data.errors){
                     swal(`${response.data.message}`,"","error")
@@ -49,7 +50,7 @@ export const startAddUser = (registerData,redirect) => {
 
 export const startRemoveUser = () => {
     return(dispatch=>{
-        axios.delete('/users/logout',{
+        axios.delete('/api/users/logout',{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

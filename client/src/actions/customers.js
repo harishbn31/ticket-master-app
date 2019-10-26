@@ -38,7 +38,7 @@ export const removeCustomer = (customer) => {
 
 export const startRemoveCustomer = (id) => {
     return (dispatch) => {
-        axios.delete(`/customers/${id}`,{
+        axios.delete(`/api/customers/${id}`,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -62,7 +62,7 @@ export const addCustomer = (customer) => {
 
 export const startAddCustomer = (customer,redirect) => {
     return (dispatch) => {
-        axios.post('/customers',customer,{
+        axios.post('/api/customers',customer,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -88,7 +88,7 @@ export const editCustomer = (customer) => {
 
 export const startEditCustomer = (customer,redirect) => {
     return(dispatch) => {
-        axios.put(`/customers/${customer.id}`,customer,{
+        axios.put(`/api/customers/${customer.id}`,customer,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

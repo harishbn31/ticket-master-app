@@ -13,7 +13,7 @@ export const setDepartments = (department) => {
 
 export const startSetDepartments = () => {
     return (dispatch) => {
-        axios.get('/departments',{
+        axios.get('/api/departments',{
                     headers: {
                         'x-auth': localStorage.getItem('authToken')
                     }
@@ -38,7 +38,7 @@ export const removeDepartment = (department) => {
 
 export const startRemoveDepartment = (id) => {
     return (dispatch) => {
-        axios.delete(`/departments/${id}`,{
+        axios.delete(`/api/departments/${id}`,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -62,7 +62,7 @@ export const addDepartment = (department) => {
 
 export const startAddDepartment = (department,redirect) => {
     return (dispatch) => {
-        axios.post('/departments',department,{
+        axios.post('/api/departments',department,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -88,7 +88,7 @@ export const editDepartment = (department) => {
 
 export const startEditDepartment = (department,redirect) => {
     return(dispatch) => {
-        axios.put(`/departments/${department.id}`,department,{
+        axios.put(`/api/departments/${department.id}`,department,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

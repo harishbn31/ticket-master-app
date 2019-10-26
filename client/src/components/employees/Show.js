@@ -16,7 +16,7 @@ class EmployeeShow extends React.Component{
 
     componentDidMount(){
         const id = this.props.match.params.id
-        axios.get(`/employees/${id}`,{
+        axios.get(`/api/employees/${id}`,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -24,7 +24,7 @@ class EmployeeShow extends React.Component{
         .then(response=>{
             const employee = response.data
 
-            axios.get('/tickets',{
+            axios.get('/api/tickets',{
                 headers: {
                     'x-auth': localStorage.getItem('authToken')
                 }

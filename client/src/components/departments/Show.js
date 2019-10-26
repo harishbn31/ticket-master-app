@@ -16,7 +16,7 @@ class DepartmentShow extends React.Component{
 
     componentDidMount(){
         const id = this.props.match.params.id
-        axios.get(`/departments/${id}`,{
+        axios.get(`/api/departments/${id}`,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -24,7 +24,7 @@ class DepartmentShow extends React.Component{
             .then(response=>{
                 const dept = response.data
 
-                axios.get('/tickets',{
+                axios.get('/api/tickets',{
                     headers: {
                         'x-auth': localStorage.getItem('authToken')
                     }

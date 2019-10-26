@@ -15,7 +15,7 @@ class CustomerShow extends React.Component {
     }
     componentDidMount(){
         const id = this.props.match.params.id
-        axios.get(`/customers/${id}`,{
+        axios.get(`/api/customers/${id}`,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -23,7 +23,7 @@ class CustomerShow extends React.Component {
         .then(response=>{
             const customer=response.data
 
-            axios.get('/tickets',{
+            axios.get('/api/tickets',{
                 headers: {
                     'x-auth': localStorage.getItem('authToken')
                 }

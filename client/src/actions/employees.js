@@ -12,7 +12,7 @@ export const setEmployees = (employee) => {
 
 export const startSetEmployees = () => {
     return (dispatch) => {
-        axios.get('/employees',{
+        axios.get('/api/employees',{
                     headers: {
                         'x-auth': localStorage.getItem('authToken')
                     }
@@ -37,7 +37,7 @@ export const removeEmployee = (employee) => {
 
 export const startRemoveEmployee = (id) => {
     return (dispatch) => {
-        axios.delete(`/employees/${id}`,{
+        axios.delete(`/api/employees/${id}`,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -61,7 +61,7 @@ export const addEmployee = (employee) => {
 
 export const startAddEmployee = (employee,redirect) => {
     return (dispatch) => {
-        axios.post('/employees',employee,{
+        axios.post('/api/employees',employee,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -87,7 +87,7 @@ export const editEmployee = (employee) => {
 
 export const startEditEmployee = (employee,redirect) => {
     return(dispatch) => {
-        axios.put(`/employees/${employee.id}`,employee,{
+        axios.put(`/api/employees/${employee.id}`,employee,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

@@ -11,7 +11,7 @@ export const setTickets = (ticket) => {
 
 export const startSetTickets = () => {
     return (dispatch) => {
-        axios.get('/tickets',{
+        axios.get('/api/tickets',{
                     headers: {
                         'x-auth': localStorage.getItem('authToken')
                     }
@@ -36,7 +36,7 @@ export const removeTicket = (ticket) => {
 
 export const startRemoveTicket = (id) => {
     return (dispatch) => {
-        axios.delete(`/tickets/${id}`,{
+        axios.delete(`/api/tickets/${id}`,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -60,7 +60,7 @@ export const addTicket = (ticket) => {
 
 export const startAddTicket = (ticket,redirect) => {
     return (dispatch) => {
-        axios.post('/tickets',ticket,{
+        axios.post('/api/tickets',ticket,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -87,7 +87,7 @@ export const editTicket = (ticket) => {
 
 export const startEditTicket = (ticket,redirect) => {
     return(dispatch) => {
-        axios.put(`/tickets/${ticket.id}`,ticket,{
+        axios.put(`/api/tickets/${ticket.id}`,ticket,{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -114,7 +114,7 @@ export const toggleTask = (ticket) => {
 
 export const startToggleTask = (id,isResolved) => {
     return(dispatch) => {
-        axios.put(`/tickets/${id}`,{isResolved:!isResolved},{
+        axios.put(`/api/tickets/${id}`,{isResolved:!isResolved},{
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

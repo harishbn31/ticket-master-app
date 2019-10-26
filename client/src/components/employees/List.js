@@ -13,14 +13,6 @@ import {startRemoveEmployee} from '../../actions/employees'
 
 class EmployeesList extends React.Component {
 
-    // constructor(props){
-    //     super(props)
-    //     // this.state = {
-    //     //     employee: {}
-    //     // }
-    // }
-
-
     handleRemove = (id) => {
         swal({
             title: "Are you sure you want to Delete?",
@@ -37,26 +29,7 @@ class EmployeesList extends React.Component {
             } 
           })
     }
-    // componentDidMount(){
-    //     axios.get('/employees',{
-    //         headers: {
-    //             'x-auth': localStorage.getItem('authToken')
-    //         }
-    //     })
-    //     .then(response=>{
-    //         const employees = response.data
-    //         console.log(employees)
-    //         const employee = this.props.employees.find(employee=>{
-    //             return employees.find(emp=> emp.department._id == employee.department)
-    //         })
-                
-    //         console.log('check',employee)
-    //         this.setState({employee})
-    //     })
-    //     .catch(err=>{
-    //         console.log(err)
-    //     })
-    // }
+
     findDepartment(id) {
         // console.log(this.props.departments.find(dept => dept._id == id))
          return this.props.departments.find(dept => dept._id == id)
@@ -65,7 +38,6 @@ class EmployeesList extends React.Component {
 
     
     render(){
-        console.log(this.props.departments)
         return(
             <div>
                     <h2>Employees - {this.props.employees.length}</h2>

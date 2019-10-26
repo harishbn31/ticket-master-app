@@ -14,11 +14,11 @@ import {startSetTickets} from './actions/tickets'
 
 const store = configureStore()
 
-console.log(store.getState())
+// console.log(store.getState())
 
-store.subscribe(()=>{
-        console.log(store.getState())
-})
+// store.subscribe(()=>{
+//         console.log(store.getState())
+// })
 
 if(localStorage.getItem('authToken')){
         axios.get('/users/account',{
@@ -29,13 +29,13 @@ if(localStorage.getItem('authToken')){
         .then(response=>{
                 const user = response.data
                 store.dispatch(setUser(user))
+                store.dispatch(startSetCustomers())
+                store.dispatch(startSetDepartments())
+                store.dispatch(startSetEmployees())
+                store.dispatch(startSetTickets())     
         })             
 }
 
-store.dispatch(startSetCustomers())
-store.dispatch(startSetDepartments())
-store.dispatch(startSetEmployees())
-store.dispatch(startSetTickets())
 
 
 
