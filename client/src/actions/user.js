@@ -24,8 +24,9 @@ export const startSetUser = (loginData,redirect) => {
                 } else {
                     swal("Successfully Logged In!","","success")
                     localStorage.setItem('authToken',response.data.token)
-                    redirect()
                     dispatch(setUser(response.data.user))
+                    redirect()
+                    
                 }
             })
     }
